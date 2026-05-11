@@ -1,0 +1,143 @@
+/* Rimuovi il display: flex dal body e imposta la larghezza al 100% */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  /* Limita la larghezza del container per dispositivi mobili */
+  margin: 0 auto;
+  /* Centra il container orizzontalmente */
+}
+
+h1 {
+  margin: 0 0 20px;
+  color: #333333;
+}
+
+.attempts-streak {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.attempts-streak p {
+  font-size: 18px;
+  color: #555555;
+}
+
+.angle-display {
+  position: relative;
+  font-size: 48px;
+  margin: 20px 0;
+  color: #007bff;
+  user-select: none;
+  cursor: pointer;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+label {
+  font-size: 18px;
+  color: #555555;
+}
+
+#user-guess {
+  font-size: 18px;
+  padding: 8px;
+  width: 80px;
+  text-align: center;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  outline: none;
+}
+
+#check-btn,
+#generate-btn {
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+#check-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+#generate-btn {
+  background-color: #34c635;
+  color: #ffffff;
+}
+
+#check-btn:hover {
+  background-color: #0056b3;
+}
+
+#generate-btn:hover {
+  background-color: #2ea12e;
+}
+
+#result-message {
+  font-size: 18px;
+  margin: 20px 0;
+  color: #555555;
+}
+
+@media (max-width: 600px) {
+  #angle-canvas {
+    width: 80%;
+    max-width: 300px;
+    /* Imposta una larghezza massima per il canvas */
+    height: auto;
+    /* Imposta l'altezza su auto per adattarla proporzionalmente */
+    display: block;
+    /* Imposta il canvas come elemento blocco per centrarlo correttamente */
+    margin: 20px auto;
+    /* Centra il canvas orizzontalmente e applica un margine superiore e inferiore */
+  }
+}
+
+/* CSS */
+.hot {
+  color: red;
+}
+
+.warm {
+  color: orange;
+}
+
+.cold {
+  color: blue;
+}
+
+#angle-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#angle-title span{
+  margin-left: -9px;
+}
+
+#spongebob {
+  width: 65px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
