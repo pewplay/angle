@@ -3,11 +3,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   min-height: 100vh;
+  background-color: transparent;
 }
 
 .container {
   text-align: center;
-  background-color: #ffffff;
+  background-color: transparent;
   padding: 20px;
   border-radius: 8px;
   max-width: 400px;
