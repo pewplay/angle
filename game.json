@@ -1,8 +1,57 @@
 {
+  "$schema": "https://raw.githubusercontent.com/pewplay/pewplay/main/schema/game.schema.json",
   "title": "Angle",
-  "description": "Metti alla prova le tue abilità geometriche indovinando l'ampiezza dell'angolo generato.",
-  "keywords": ["puzzle", "educational", "math", "geometry", "browser game"],
-  "category": "Puzzle",
-  "author": "Il tuo nome",
-  "playMode": "SinglePlayer"
+  "description": "Guess the size of a random angle in degrees with four tries and hot-or-cold hints, and build a streak in this free geometry game in your browser.",
+  "about": "Angle is a quick estimation game for anyone who wants to sharpen their eye for geometry. Each round draws a random angle between 0 and 359 degrees, marked with a red arc, and you type in how wide you think it is. You get four attempts to find the exact number.\n\nAfter every wrong guess a hint tells you how close you are, from Freezing through Cold and Warm up to Hot and Boiling when you are within five degrees. Guess right and a new angle appears straight away while your streak grows; run out of attempts and the answer is revealed and your streak starts again from zero.\n\nIt is a handy practice tool for students learning to measure angles and a surprisingly addictive challenge for adults who think they can eyeball a right angle.",
+  "howToPlay": "Look at the angle marked by the red arc and type your guess in degrees, from 0 to 359. Press Check or Enter to submit it; you have four attempts per angle and each miss gives a hot-or-cold hint. A correct guess adds one to your streak and shows a new angle, while New Random Angle skips to a fresh one and resets the streak.",
+  "controls": [
+    {
+      "input": "0–9",
+      "action": "Type your guess in degrees"
+    },
+    {
+      "input": "Enter / Check",
+      "action": "Submit your guess"
+    },
+    {
+      "input": "Click / Tap",
+      "action": "New Random Angle button"
+    }
+  ],
+  "tips": [
+    "Compare the angle with 90 and 180 degrees first, then refine from there.",
+    "Boiling means you are within 5 degrees and Hot within 10, so make small adjustments.",
+    "Remember the red arc shows the angle being measured, even when it is wider than 180 degrees.",
+    "Hints are based on the plain difference in degrees, so guessing 10 for an angle of 350 counts as very far off."
+  ],
+  "faq": [
+    {
+      "question": "Is Angle free to play?",
+      "answer": "Yes. It is completely free and runs in your browser with no download or sign-up."
+    },
+    {
+      "question": "Can I play it on a phone or tablet?",
+      "answer": "Yes. The canvas scales to fit small screens and you type your guess with the on-screen number keyboard."
+    },
+    {
+      "question": "How does the streak work?",
+      "answer": "Each angle you guess within four attempts adds one to your streak. Running out of attempts or pressing New Random Angle resets it to zero."
+    }
+  ],
+  "category": "Educational",
+  "tags": [
+    "angles",
+    "geometry",
+    "math",
+    "estimation",
+    "guessing"
+  ],
+  "author": "PewPlay",
+  "playMode": "SinglePlayer",
+  "orientation": "any",
+  "cover": "cover.png",
+  "screenshots": [
+    "screenshots/1.png",
+    "screenshots/2.png"
+  ]
 }

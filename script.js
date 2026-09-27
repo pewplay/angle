@@ -86,22 +86,25 @@ checkBtn.addEventListener('click', () => {
     }
 
     const userGuess = parseInt(userGuessInput.value);
+    if (isNaN(userGuess)) {
+        userGuessInput.focus();
+        return; // Ignore empty input
+    }
 
     if (userGuess === generatedAngle) {
-        resultMessage.innerText = 'Complimenti! Hai indovinato l\'angolo!';
         if (!hasLost) {
-            currentStreak++; // Incrementa la streak solo se non hai perso tutti i tentativi
+            currentStreak++; // Increase the streak only if you have not lost all attempts
         }
-        resetGame(); // Rigenera un nuovo angolo
+        resetGame(); // Generate a new angle
+        resultMessage.innerText = `Well done! The angle was ${userGuess}°. Here is a new one!`;
     } else {
         const difference = Math.abs(userGuess - generatedAngle); // Calcola la differenza assoluta
-        console.log(difference);
         const hint = getHint(difference);
-        resultMessage.innerHTML = `Spiacente, il tuo tentativo non è corretto. <br>💡${hint}.<br>Prova di nuovo!`;
+        resultMessage.innerHTML = `Sorry, that is not right. <br>💡${hint}<br>Try again!`;
 
         attemptsLeft--; // Decrementa i tentativi rimasti per l'angolo corrente
         if (attemptsLeft === 0) {
-            resultMessage.innerText = `Hai esaurito i tentativi. L'angolo era ${generatedAngle}°`;
+            resultMessage.innerText = `No attempts left. The angle was ${generatedAngle}°`;
             hasLost = true; // Imposta il flag hasLost a true se hai perso tutti i tentativi
             resetStreak(); // Reimposta la streak quando hai perso tutti i tentativi
         }
@@ -116,6 +119,14 @@ checkBtn.addEventListener('click', () => {
     }
 });
 
+// Enter in the input field = Check
+userGuessInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        checkBtn.click();
+    }
+});
+
 generateBtn.addEventListener('click', () => {
     resetGame(); // Rigenera un nuovo angolo
     resetStreak(); // Reimposta la streak solo se hai perso tutti i tentativi
@@ -125,12 +136,12 @@ generateBtn.addEventListener('click', () => {
 
 // Array di suggerimenti in base alla vicinanza dell'angolo
 const hints = [
-    { maxDifference: 5, hint: '<span class="hot">Bollente</span>! Sei molto vicino!' },
-    { maxDifference: 10, hint: '<span class="hot">Caldo</span>! Stai avvicinandoti!' },
-    { maxDifference: 20, hint: '<span class="warm">Ti scaldi</span>! Continua così!' },
-    { maxDifference: 30, hint: '<span class="cold">Freddo</span>... Prova un altro tentativo!' },
-    { maxDifference: 45, hint: '<span class="cold">Molto freddo</span>... Cerca altrove!' },
-    { maxDifference: Infinity, hint: '<span class="cold">Gelido</span>! Riprova con un nuovo angolo.' }, // Caso generale
+    { maxDifference: 5, hint: '<span class="hot">Boiling</span>! You are very close!' },
+    { maxDifference: 10, hint: '<span class="hot">Hot</span>! You are getting closer!' },
+    { maxDifference: 20, hint: '<span class="warm">Warm</span>! Keep going!' },
+    { maxDifference: 30, hint: '<span class="cold">Cold</span>... Try another guess!' },
+    { maxDifference: 45, hint: '<span class="cold">Very cold</span>... Look elsewhere!' },
+    { maxDifference: Infinity, hint: '<span class="cold">Freezing</span>! Way off.' }, // Caso generale
 ];
 
 function getHint(difference) {
@@ -139,7 +150,7 @@ function getHint(difference) {
             return hint.hint;
         }
     }
-    return 'Nessun suggerimento disponibile';
+    return 'No hint available';
 }
 
 let attemptsLeft = 4;
@@ -148,7 +159,6 @@ let hasLost = false;
 function updateAttemptsLeft() {
     attemptsLeftDisplay.innerText = attemptsLeft;
     localStorage.setItem('attemptsLeft', attemptsLeft);
-    console.log(localStorage.getItem('attemptsLeft'));
 }
 
 function updateCurrentStreak() {
@@ -198,9 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedCurrentStreak = localStorage.getItem('currentStreak');
     if (savedCurrentStreak) {
         currentStreak = parseInt(savedCurrentStreak);
-    } else {
-        updateCurrentStreak(); // Aggiorna la streak all'avvio della pagina
     }
+    updateCurrentStreak(); // Show the streak on page load
 
     // Restore the number of attempts from localStorage
     const savedAttemptsLeft = localStorage.getItem('attemptsLeft');
@@ -208,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         attemptsLeft = parseInt(savedAttemptsLeft);
         // Check if attempts are exhausted and show the appropriate message
         if (attemptsLeft === 0) {
-            resultMessage.innerText = `Hai esaurito i tentativi. L'angolo era ${generatedAngle}°`;
+            resultMessage.innerText = `No attempts left. The angle was ${generatedAngle}°`;
             hasLost = true; // Set the hasLost flag to true if all attempts are exhausted
         }
     } else {

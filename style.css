@@ -142,3 +142,40 @@ label {
   left: 10px;
   bottom: 10px;
 }
+.top-spacer {
+  height: 100px;
+}
+
+/* Short screens (e.g. the PewPlay player): less empty space, smaller canvas */
+@media (max-height: 820px) {
+  .top-spacer {
+    height: 0;
+  }
+  .container {
+    padding-top: 8px;
+  }
+  h1 {
+    margin-bottom: 4px;
+  }
+  .attempts-streak p {
+    margin: 4px 0;
+  }
+  .attempts-streak {
+    margin-bottom: 4px;
+  }
+  #angle-canvas {
+    width: 300px;
+    max-width: 80%;
+    height: auto;
+  }
+  .angle-display {
+    margin: 0;
+  }
+  .input-container {
+    margin: 8px 0;
+  }
+  #result-message {
+    margin: 8px 0;
+    min-height: 1.2em;
+  }
+}
