@@ -1,7 +1,37 @@
 {
   "$schema": "https://raw.githubusercontent.com/pewplay/pewplay/main/schema/game.schema.json",
   "title": "Angle",
-  "description": "Test your geometry skills: guess how wide the angle on screen is. A quick, free math puzzle you can play in your browser.",
+  "description": "Estimate the size of each angle and build a streak before your attempts run out.",
+  "about": "Angle is a browser game where you look at the displayed angle, enter your estimate and press Check. Try to keep a streak before your attempts run out.\n\nStart a round in your browser and use the controls below to play.",
+  "howToPlay": "Look at the displayed angle, enter your estimate and press Check. Try to keep a streak before your attempts run out.",
+  "controls": [
+    {
+      "input": "Number field",
+      "action": "Enter an angle estimate"
+    },
+    {
+      "input": "Check",
+      "action": "Submit the estimate"
+    },
+    {
+      "input": "Random Angle",
+      "action": "Generate another angle"
+    }
+  ],
+  "tips": [
+    "Use number field to enter an angle estimate.",
+    "Try another round to practice the timing and strategy."
+  ],
+  "faq": [
+    {
+      "question": "How do I play Angle?",
+      "answer": "Look at the displayed angle, enter your estimate and press Check. Try to keep a streak before your attempts run out."
+    },
+    {
+      "question": "Can I play Angle in a browser?",
+      "answer": "Yes. Open the game page and play without installing an app."
+    }
+  ],
   "category": "Puzzle",
   "tags": [
     "puzzle",
@@ -10,5 +40,8 @@
     "geometry",
     "browser game"
   ],
-  "playMode": "SinglePlayer"
+  "playMode": "SinglePlayer",
+  "orientation": "any",
+  "cover": "cover.png",
+  "draft": true
 }

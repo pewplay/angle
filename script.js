@@ -147,8 +147,8 @@ let hasLost = false;
 
 function updateAttemptsLeft() {
     attemptsLeftDisplay.innerText = attemptsLeft;
-    localStorage.setItem('attemptsLeft', attemptsLeft);
-    console.log(localStorage.getItem('attemptsLeft'));
+    localStorage.setItem('angle:attemptsLeft', attemptsLeft);
+    console.log(localStorage.getItem('angle:attemptsLeft'));
 }
 
 function updateCurrentStreak() {
@@ -165,7 +165,7 @@ function resetGame() {
     updateAttemptsLeft();
 
     // Memorize the value of the generated angle in localStorage
-    localStorage.setItem('generatedAngle', generatedAngle);
+    localStorage.setItem('angle:generatedAngle', generatedAngle);
 
     // Reactivate the "Check" button after angle regeneration
     checkBtn.disabled = false;
@@ -178,7 +178,7 @@ function resetStreak() {
     hasLost = false;
 
     // Memorizza il valore della streak nel localStorage
-    localStorage.setItem('currentStreak', currentStreak);
+    localStorage.setItem('angle:currentStreak', currentStreak);
 }
 
 
@@ -186,7 +186,7 @@ function resetStreak() {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Recupera il valore dell'angolo generato dal localStorage (se presente)
-    const savedGeneratedAngle = localStorage.getItem('generatedAngle');
+    const savedGeneratedAngle = localStorage.getItem('angle:generatedAngle');
     if (savedGeneratedAngle) {
         generatedAngle = parseInt(savedGeneratedAngle);
         drawAngle(generatedAngle);
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Recupera il valore della streak dal localStorage (se presente)
-    const savedCurrentStreak = localStorage.getItem('currentStreak');
+    const savedCurrentStreak = localStorage.getItem('angle:currentStreak');
     if (savedCurrentStreak) {
         currentStreak = parseInt(savedCurrentStreak);
     } else {
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Restore the number of attempts from localStorage
-    const savedAttemptsLeft = localStorage.getItem('attemptsLeft');
+    const savedAttemptsLeft = localStorage.getItem('angle:attemptsLeft');
     if (savedAttemptsLeft) {
         attemptsLeft = parseInt(savedAttemptsLeft);
         // Check if attempts are exhausted and show the appropriate message
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hasLost = true; // Set the hasLost flag to true if all attempts are exhausted
         }
     } else {
-        attemptsLeft = 4; // Set default value if 'attemptsLeft' not found in localStorage
+        attemptsLeft = 4; // Set default value if 'angle:attemptsLeft' not found in localStorage
     }
     updateAttemptsLeft();
 });
