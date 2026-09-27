@@ -1,8 +1,14 @@
 {
+  "$schema": "https://raw.githubusercontent.com/pewplay/pewplay/main/schema/game.schema.json",
   "title": "Angle",
-  "description": "Metti alla prova le tue abilità geometriche indovinando l'ampiezza dell'angolo generato.",
-  "keywords": ["puzzle", "educational", "math", "geometry", "browser game"],
+  "description": "Test your geometry skills: guess how wide the angle on screen is. A quick, free math puzzle you can play in your browser.",
   "category": "Puzzle",
-  "author": "Il tuo nome",
+  "tags": [
+    "puzzle",
+    "educational",
+    "math",
+    "geometry",
+    "browser game"
+  ],
   "playMode": "SinglePlayer"
 }
