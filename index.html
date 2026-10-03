@@ -1,36 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Angle</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.png" type="image/png">
 </head>
-
 <body>
-    <div class="top-spacer"></div>
-  <div class="container">
-    <h1 id="angle-title">
-      <img src="favicon.png" alt="A" width="50">
-      <span>NGLE</span>
-    </h1>
-    <div class="attempts-streak">
-      <p>Attempts left: <span id="attempts-left">4</span></p>
-      <p>Current streak: <span id="current-streak">0</span></p>
-    </div>
-    <canvas id="angle-canvas" width="400" height="400"></canvas>
-    <div class="angle-display"></div>
-    <div class="input-container">
-      <label for="user-guess">Your guess (°): &nbsp;</label>
-      <input type="number" id="user-guess" min="0" max="359" inputmode="numeric" />
-      <button id="check-btn">Check</button>
-    </div>
-    <p id="result-message"></p>
-    <button id="generate-btn">New Random Angle</button>
+  <div id="app">
+    <header class="top">
+      <h1 class="logo" aria-label="Angle"><img src="favicon.png" alt=""><span>NGLE</span></h1>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-label">Attempts</span>
+          <span class="pips" id="pips" aria-label="Attempts left: 4"><i></i><i></i><i></i><i></i></span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Streak</span>
+          <span class="stat-value" id="streak">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Best</span>
+          <span class="stat-value" id="best">0</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="stage" id="stage">
+      <canvas id="angle-canvas" aria-label="The angle to guess"></canvas>
+    </main>
+
+    <section class="panel">
+      <div class="readout" id="readout" aria-live="polite">
+        <span class="readout-label" id="readout-label">Your guess</span>
+        <span class="readout-value"><span id="guess"></span><span class="deg">°</span></span>
+      </div>
+      <div class="history" id="history"></div>
+      <p class="message" id="message" aria-live="polite">How wide is the red angle? Enter a value from 0 to 359.</p>
+      <div class="keypad" id="keypad">
+        <button class="key" data-k="1">1</button>
+        <button class="key" data-k="2">2</button>
+        <button class="key" data-k="3">3</button>
+        <button class="key" data-k="4">4</button>
+        <button class="key" data-k="5">5</button>
+        <button class="key" data-k="6">6</button>
+        <button class="key" data-k="7">7</button>
+        <button class="key" data-k="8">8</button>
+        <button class="key" data-k="9">9</button>
+        <button class="key key-del" data-k="del" aria-label="Delete">&#9003;</button>
+        <button class="key" data-k="0">0</button>
+        <button class="key key-check" data-k="ok">Check</button>
+      </div>
+      <button class="action" id="action-btn">New angle</button>
+    </section>
   </div>
   <script src="script.js"></script>
 </body>
-
 </html>
