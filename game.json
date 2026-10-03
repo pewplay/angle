@@ -1,21 +1,25 @@
 {
   "$schema": "https://raw.githubusercontent.com/pewplay/pewplay/main/schema/game.schema.json",
   "title": "Angle",
-  "description": "Guess the size of a random angle in degrees with four tries and hot-or-cold hints, and build a streak in this free geometry game in your browser.",
-  "about": "Angle is a quick estimation game for anyone who wants to sharpen their eye for geometry. Each round draws a random angle between 0 and 359 degrees, marked with a red arc, and you type in how wide you think it is. You get four attempts to find the exact number.\n\nAfter every wrong guess a hint tells you how close you are, from Freezing through Cold and Warm up to Hot and Boiling when you are within five degrees. Guess right and a new angle appears straight away while your streak grows; run out of attempts and the answer is revealed and your streak starts again from zero.\n\nIt is a handy practice tool for students learning to measure angles and a surprisingly addictive challenge for adults who think they can eyeball a right angle.",
-  "howToPlay": "Look at the angle marked by the red arc and type your guess in degrees, from 0 to 359. Press Check or Enter to submit it; you have four attempts per angle and each miss gives a hot-or-cold hint. A correct guess adds one to your streak and shows a new angle, while New Random Angle skips to a fresh one and resets the streak.",
+  "description": "Guess the size of a random angle in degrees with four tries and hot-or-cold hints, then build your best streak in this free geometry game.",
+  "about": "Angle is a quick estimation game for anyone who wants to sharpen their eye for geometry. Each round draws a random angle between 0 and 359 degrees, marked with a red arc, and you enter how wide you think it is. You get four attempts to find the exact number.\n\nAfter every wrong guess a hint tells you how close you are, from Freezing through Cold and Warm up to Hot and Boiling when you are within five degrees, and your earlier guesses stay on screen as colored chips. Guess right and your streak grows; run out of attempts and the answer is revealed next to your last guess, and your streak starts again from zero. Your best streak is saved.\n\nIt is a handy practice tool for students learning to measure angles and a surprisingly addictive challenge for adults who think they can eyeball a right angle.",
+  "howToPlay": "Look at the angle marked by the red arc and enter your guess in degrees, from 0 to 359, with the on-screen keypad or your keyboard. Press Check or Enter to submit it; you have four attempts per angle and each miss gives a hot-or-cold hint. A correct guess adds one to your streak, then Next angle brings a new one. Skipping an angle resets the streak.",
   "controls": [
     {
-      "input": "0–9",
-      "action": "Type your guess in degrees"
+      "input": "Tap / Click keypad",
+      "action": "Enter your guess and press Check"
     },
     {
-      "input": "Enter / Check",
-      "action": "Submit your guess"
+      "input": "0–9 / Backspace",
+      "action": "Type or delete digits"
     },
     {
-      "input": "Click / Tap",
-      "action": "New Random Angle button"
+      "input": "Enter / Space",
+      "action": "Check the guess, or go to the next angle"
+    },
+    {
+      "input": "Esc",
+      "action": "Clear the current guess"
     }
   ],
   "tips": [
@@ -31,11 +35,11 @@
     },
     {
       "question": "Can I play it on a phone or tablet?",
-      "answer": "Yes. The canvas scales to fit small screens and you type your guess with the on-screen number keyboard."
+      "answer": "Yes. The layout adapts to phones and tablets in both orientations, and you enter your guess with the large on-screen keypad."
     },
     {
       "question": "How does the streak work?",
-      "answer": "Each angle you guess within four attempts adds one to your streak. Running out of attempts or pressing New Random Angle resets it to zero."
+      "answer": "Each angle you guess within four attempts adds one to your streak. Running out of attempts or skipping an angle resets it to zero, while your best streak is remembered."
     }
   ],
   "category": "Educational",
@@ -52,6 +56,7 @@
   "cover": "cover.png",
   "screenshots": [
     "screenshots/1.png",
-    "screenshots/2.png"
+    "screenshots/2.png",
+    "screenshots/3.png"
   ]
 }
